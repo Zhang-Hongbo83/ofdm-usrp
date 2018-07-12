@@ -10,7 +10,7 @@ clear caseList;
 
 parval={
 %	fBaud   	modFormat	Nb      	Nsc     	Nsceff  	Nf      	CP      	SNR     	isEqualization	isDHTON 
-	30      	'QPSK'  	2       	256     	248     	100     	0.25    	15      	1       	1       ;
+	30      	'QPSK'  	2       	256     	248     	100     	0.25    	15      	1       	0       ;
 	60      	'QPSK'  	2       	256     	248     	200     	0.25    	25      	1       	1       ;
 	40      	'16QAM' 	2       	256     	248     	200     	0.25    	25      	1       	1       ;
 

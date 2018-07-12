@@ -1,3 +1,11 @@
+%  Copyright, 2018 (C), H.B. Zhang, <hongbo.zhang83@gmail.com>
+%
+% Modifications:
+% Version    Date        Author        Log.
+% V1.0       20180712    H.B. Zhang    Create this script
+% Ref:
+%
+
 % check system running mode
 if (vP.sysMode == 2) % 1->simulation mode;2->offline txdsp;3->offline rxdsp
     vR = [];

@@ -18,6 +18,12 @@
 % Ref:
 %
 
+% check system running mode
+if (vP.sysMode == 2) % 1->simulation mode;2->offline txdsp;3->offline rxdsp
+    vR = [];
+    return;
+end
+
 load workRoot.mat;
 logFilePath            = fullfile(workRoot,'logs',logFileName);
 resultFilePath         = fullfile(workRoot,'results',resultFileName);

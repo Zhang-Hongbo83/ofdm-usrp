@@ -26,9 +26,9 @@ close all;
 clc;
 
 %% Simulation/Offline mode
-vP.sysModeStr          = 'Offline';  % {'Simulation','Offline'}
-vP.oflTxON             = 0;  % 0->OFF/1-ON, generate USRP Transmitter offline data
-vP.oflRxON             = 1;  % 0->OFF/1-ON, running offline script to process offline data
+vP.sysModeStr          = 'Simulation';  % {'Simulation','Offline'}
+vP.oflTxON             = 1;  % 0->OFF/1-ON, generate USRP Transmitter offline data
+vP.oflRxON             = 0;  % 0->OFF/1-ON, running offline script to process offline data
 
 %% select simulation case number
 tBegin                      = clock;
