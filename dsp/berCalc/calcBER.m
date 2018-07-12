@@ -47,4 +47,4 @@ ber                    = errNum/bitLen;
 fprintf('%s%d\n','- Total bit is: ',bitLen);
 fprintf('%s%d\n','- Total error bit is: ',errNum);
 fprintf('%s%.2e\n','- Total ber is: ',ber);
-fprintf('%s\n', '- offline data processing completed.');
+fprintf('- %s data processing completed.\n',vP.sysModeStr);

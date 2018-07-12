@@ -20,13 +20,13 @@
 
 % parameters definition
 fileType               = '.mat';   % file type
-fileIdx                = 2;
+fileIdx                = 1;
 
 % offline data root path
 folderRoot             = 'D:\temp\dataUSRPofdm\';
 
 % experimental date
-expDate                = '20180711';
+expDate                = '20180712';
 
 % offline data folder path
 folderPath             = fullfile(folderRoot,expDate);
