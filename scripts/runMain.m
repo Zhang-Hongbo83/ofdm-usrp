@@ -1,6 +1,8 @@
 % Description:
 %     OFDM transmission system for simulation and USRP-based experiment
 %
+%     run setsimenv first
+% 
 % EXAMPLE:
 %     runMain
 %
