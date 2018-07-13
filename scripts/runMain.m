@@ -17,6 +17,8 @@
 % V1.0       20180626    H.B. Zhang    Create this script
 % V1.1       20180711    H.B. Zhang    Add DHT precoding and offline code
 % V1.1       20180712    H.B. Zhang    Ver B001 release
+% V1.2       20180713    H.B. Zhang    Auto detect xlsx modification, add
+%                                      caseNum to result file, add rng seed
 % Ref:
 %
 
@@ -27,29 +29,25 @@ clc;
 
 %% Simulation/Offline mode
 vP.sysModeStr          = 'Simulation';  % {'Simulation','Offline'}
-vP.oflTxON             = 1;  % 0->OFF/1-ON, generate USRP Transmitter offline data
-vP.oflRxON             = 0;  % 0->OFF/1-ON, running offline script to process offline data
+vP.oflTxON             = 0;  % 0->OFF/1-ON, generate USRP Transmitter offline data
+vP.oflRxON             = 1;  % 0->OFF/1-ON, running offline script to process offline data
 
-%% select simulation case number
+%% gen case_list.m and select simulation case number
 tBegin                      = clock;
-if checkFileExist('case_list.m')
-    case_list;
-else
-    genOK = genCaseList('case_list.xlsx');
-    if (genOK == 0)
-        fprintf('%s\n','- Gen case_list.m file failed, simulation will be stopped.');
-        return;
-    end
-end
 caseNum                     = 1;
+refreshCaseList;
 
 %% set version information
 verInfo.projName       = 'OFDM-USRP';
-verInfo.date           = '2018-07-12';
-verInfo.verNo          = 'B001';
+verInfo.date           = '2018-07-13';
+verInfo.verNo          = 'B001T001';
 verInfo.author         = 'Hongbo Zhang';
 verInfo.email          = 'hongbo.zhang83@gmail.com';
 vP.verInfo             = verInfo;
+seedOrig               = char2num(verInfo.verNo);
+seed                   = mod(seedOrig,2^32);
+rng('default');
+rng(seed);
 
 %% insert control flag code here
 

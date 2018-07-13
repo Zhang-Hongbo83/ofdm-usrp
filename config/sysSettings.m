@@ -71,7 +71,10 @@ vP.glb                 = glb;
 %% ============== Pre-set File Names ==============
 % set results and logs file names
 load workRoot.mat;
-fileHeader             = sprintf('%s%s%s%s%s%s%s%s%s','_OFDM_',vP.sysModeStr,'_DHT',num2str(vP.glb.isDHTON),...
+if (vP.sysMode ~= 1)   % caseNum=0 -> offline
+    caseNum = 0; 
+end
+fileHeader             = sprintf('%s%d%s%s%s%s%s%s%s%s%s','_case_',caseNum,'_OFDM_',vP.sysModeStr,'_DHT',num2str(vP.glb.isDHTON),...
                           '_Equa',num2str(vP.glb.isEqualization),'_',datestr(now,'yyyymmddTHHMMSS'),'.txt');
 logFileName            = sprintf('%s%s','logs',fileHeader);
 resultFileName         = sprintf('%s%s','results',fileHeader);

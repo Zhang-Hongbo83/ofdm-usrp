@@ -44,5 +44,3 @@ fprintf(fid,'%-9s\t%.2f\t%.2f\t%.2f\t%-6d\t%d\t%-4d\t%d\t%.2f\t%-14d\t%-7d\t%.2f
     glb.modFormat,glb.fDAC,glb.fBaud,glb.bitrate,glb.Nsceff,glb.Nb,...
     glb.Nfft,glb.Nf,glb.CP,glb.isEqualization,glb.isDHTON,QdB,ber);
 fclose(fid);
-
-%% save logs
